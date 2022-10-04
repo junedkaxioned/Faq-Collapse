@@ -102,34 +102,131 @@ li {
 }
 
 /*=================================
-  Header styling starts here
-=================================*/
-
-
-
-/*=================================
-  Header styling ends here
-=================================*/  
-
-/*=================================
   main styling starts here
 =================================*/
 
+body { background-color: #f0f0f0; }
+.faq-section { padding: 40px 0; }
 
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.faq-container {
+  width: 480px;
+}
+
+.faq {
+  padding: 30px;
+  border: 1px solid #9fa4a8;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease;
+}
+
+.faq.active {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  font-family: 'FontAwesome';
+  color: #2ecc71;
+  font-size: 100px;
+  position: absolute;
+  opacity: 0.2;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: #3498db;
+  top: -10px;
+  left: -30px;
+  transform: rotateY(180deg);
+}
+
+.faq-title {
+  margin: 0 25px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.faq-text {
+  margin: 20px 0 0;
+  display: none;
+  position: relative;
+  z-index: 250;
+  font-size: 12px;
+}
+
+.faq.active .faq-text { display: block; }
+
+.faq-btn {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  justify-content: center;
+} 
+
+.close-btn, 
+.open-btn { 
+  text-indent: -9999px; 
+}
+
+.open-btn::before {
+  content: "\f078";
+  font-family: "FontAwesome";
+  float: right;
+  text-indent: 0;
+}
+
+.close-btn::before {
+  content: "\f00d";
+  font-family: "FontAwesome";
+  float: right;
+  text-indent: 0;
+}
+
+.faq-btn .close-btn { display: none; }
+
+.faq.active .faq-btn .close-btn {
+  color: #fff;
+  display: block;
+}
+
+.faq.active .faq-btn .open-btn { display: none; }
+.faq.active .faq-btn { background-color: #9fa4a8; }
 
 /*=================================
   main styling ends here
 =================================*/
-
-/*=================================
-  footer styling starts here
-=================================*/ 
-
-
-
- /*=================================
-  footer styling ends here
-=================================*/ 
 
 /*media query starts*/
 /*media query for 995px starts here*/
